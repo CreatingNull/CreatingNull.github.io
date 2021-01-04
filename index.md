@@ -8,7 +8,7 @@ The official documentation for all current NullTek projects.
 
 #### [Cascadable Intelligent Power Switches (CIPS)](hardware/cips/index.md)
 
-Low-cost infinitely-cascadable power switch for automation of DC switching with intelligent feedback. 
+_Low-cost infinitely-cascadable power switch for automation of DC switching with intelligent feedback._ 
 
 ### Schemas and Protocols
 
