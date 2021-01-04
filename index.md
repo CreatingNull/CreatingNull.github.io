@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## ![NullTek Documentation](resources/NullTekDocumentationLogo.png)
 
-You can use the [editor on GitHub](https://github.com/CreatingNull/CreatingNull.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+The official documentation for all current NullTek projects. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---
 
-### Markdown
+### Hardware Projects
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### [Cascadable Intelligent Power Switches (CIPS)](hardware/cips/index.md)
 
-```markdown
-Syntax highlighted code block
+Low-cost infinitely-cascadable power switch for automation of DC switching with intelligent feedback. 
 
-# Header 1
-## Header 2
-### Header 3
+### Schemas and Protocols
 
-- Bulleted
-- List
+#### [Null Packet Comm's Protocol (NPC)](protocols/npc/index.md)
 
-1. Numbered
-2. List
+_A generic scheme for handling serial communication between subsystems using a packet based approach._
 
-**Bold** and _Italic_ and `Code` text
+#### [UART Embedded Operating System (UOS)](protocols/uos/index.md)
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CreatingNull/CreatingNull.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+_A scheme for providing external control of embedded systems using UART or other interface._
