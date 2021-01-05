@@ -7,7 +7,7 @@
 ![CIPS Header](CIPSHeader.png)
 
 CIPS are a low-cost power switch for automating the control of DC power to devices without sacrificing features. 
-The switches are infinitely1 cascadable and require no software configuration, instead self-addressing by their position in the daisy chain. 
+The switches are infinitely cascadable and require no software configuration, instead self-addressing by their position in the daisy chain. 
 The switches communicate over a simple half-duplex serial interface, and are able to report back current and voltage measurements from the switch.
 
 ## Hardware 
@@ -30,7 +30,7 @@ It is the safest most reliable configuration because it doesn't need to be piggy
 
 This is the simplest configuration in terms of wiring complexity. 
 It allows the CIPs 12V control voltage to piggy back off the primary source supply. 
-This relies on the source voltage being 12-30V, which is often the case
+This relies on the source voltage being 12-30V, which is often the case in reality.
 
 ### Control Voltage Independently Supplied (CVIS)
 
