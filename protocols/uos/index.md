@@ -12,6 +12,10 @@ The AOS system uses blanket remote address distribution, so address 1-255 are al
 Address 0 always refers to the Host device. 
 A command is sent over UART any time you need to set or request some information from the UOS device. 
 
+## Device Implementations
+
+* Arduino (Device 0) - Running on top of the arduino bootloader, designed for ATMega328, namely the Uno and Nano.
+
 ## System Architecture
 
 The system is segregated using addresses to refer to specific functionality. 

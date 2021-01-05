@@ -19,3 +19,8 @@ _A generic scheme for handling serial communication between subsystems using a p
 ## [UART Embedded Operating System (UOS)](protocols/uos/index.md)
 
 _A scheme for providing external control of embedded systems using UART or other interface._
+
+# Repositories
+
+* [UOS Python Interface](https://github.com/CreatingNull/UART-Operating-System-Interface) - Tooling for communication with a [UOS](protocols/uos/index.md) device.
+* [UOS Arduino Implementation](https://github.com/CreatingNull/UART-Arduino-Operating-System) - Arduino implementation of the [UOS](protocols/uos/index.md) protocol.
