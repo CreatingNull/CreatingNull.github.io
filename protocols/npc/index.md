@@ -24,23 +24,29 @@ _Enclosed square brackets `[]` are used to denote a byte._
    It is represented by the char '>' or 0x3E. 
    It is not a unique char and can appear elsewhere in the packet. 
    It is required that checksums and packet lengths are still validated to ensure device to device serial synchronisation.
+
 2. **To address**. 
    This is a one byte address that is used to prompt a remote system on which action the serial packet is targeting (ie: a port expander, specific IO function, OS command ect). 
    Generally the embedded system is build to accept addresses 1-255, and the local host system is built to only use the address 0. 
    However, in the case of bidirectional control these address could be divvied by arbitrarily.
+
 3. **From address**. 
    Also a one byte address denoting where / which subsystem the serial packet originated.
+
 4. **Payload length**. 
    A one byte numeric indicator of how many bytes the packet has in its payload. 
    This is a binary number between 0-255, however with most implementations total packet size is less than 32 bytes. 
    Usually the payload is only several bytes in length.
+
 5. **Payload data**. 
    x data bytes where x is the payload length from the prior byte. 
    Note there is no restriction on the format of the payload besides defining the length. 
    Format is system dependant.
+
 6. **Checksum**. 
    This is just your standard LRC checksum. 
    It is generated off all the bytes in the packet, besides the start symbol, end symbol and checksum bytes.
+
 7. **End packet symbol**. 
    This one byte is a convenience-char used to signal the end of a packet. 
    It is represented by the char `<` (0x3C). 
