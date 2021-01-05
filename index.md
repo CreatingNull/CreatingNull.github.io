@@ -1,4 +1,4 @@
-[![NullTek Documentation](resources/NullTekDocumentationLogo.png)](index.md)
+[![NullTek Documentation](resources/NullTekDocumentationLogo.png)](https://creatingnull.github.io)
 
 The official documentation for all current NullTek projects. 
 
