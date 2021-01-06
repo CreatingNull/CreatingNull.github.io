@@ -8,11 +8,11 @@
 
 CIPS are a low-cost power switch for automating the control of DC power to devices without sacrificing features. 
 The switches are infinitely cascadable and require no software configuration, instead self-addressing by their position in the daisy chain. 
-The switches communicate over a simple half-duplex serial interface, and are able to report back current and voltage measurements from the switch.
+The switches communicate over a simple half-duplex serial interface, and are able to report back current and voltage measurements.
 
 ## Hardware 
 
-The switch can be build in several configurations depending on the requirements of it's application. There are pro's and con's to each setup. 
+The switch can be build in several configurations depending on the requirements of its application. There are pro's and con's to each setup. 
 
 | Configuration | 1-12V Switching | Single Source Supply | Cheap BOM |
 | :------------ | :-------------: | :------------------: | :-------: |
@@ -32,7 +32,7 @@ This is the simplest configuration in terms of wiring complexity.
 It allows the CIPs 12V control voltage to piggy back off the primary source supply. 
 This relies on the source voltage being 12-30V, which is often the case in reality.
 
-### Control Voltage Independently Supplied (CVIS)
+### Control Voltage Independently-Supplied (CVIS)
 
 This configuration is the cheapest because it doesn't require U6 to be populated. 
 It relies on the regulation and stability of an external control supply. 
