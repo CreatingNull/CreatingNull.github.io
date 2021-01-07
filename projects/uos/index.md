@@ -14,7 +14,7 @@ A command is sent over UART any time you need to set or request some information
 
 ## Device Implementations
 
-* [Arduino (Device 0)](https://github.com/CreatingNull/UART-Arduino-Operating-System) - Running on top of the arduino bootloader, designed for ATMega328, namely the Uno and Nano.
+* [Arduino (Device 0)](arduino.md) - Running on top of the arduino bootloader, designed for ATMega328, namely the Uno and Nano.
 
 ## System Architecture
 
