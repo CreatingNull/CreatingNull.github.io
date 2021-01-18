@@ -10,7 +10,7 @@ This system aims to provide an all encompassing serial controlled device, which 
 The entire system can be configured in runtime over UART, pins can be mapped levels set ect. 
 The AOS system uses blanket remote address distribution, so address 1-255 are all uses for the embedded system. 
 Address 0 always refers to the Host device. 
-A command is sent over UART any time you need to set or request some information from the UOS device. 
+A command is sent over UART any time you need to set or request some information from the UOS device.
 
 ## Device Implementations
 
@@ -58,9 +58,39 @@ These volatility levels change how the microcontroller processes instructions an
 
 ## Address Map
 
+The following table enumerates currently accepted instructions. 
+
 | Address | Volatility       | Name / Description                                                                                                           | Payload                                               | Response                                                        | 
 | :------ | :--------------: | :--------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------  | :-------------------------------------------------------------- |
 | 64      | Super-Volatile   | Digital IO Control - Over_Rides onboard settings, doesn't update RAM values and can be overwritten.                          | 3 bytes per-pin. Pin index, IO type, level            | ACK (, boolean packet if IO Type = 1)                           |
 | 68      | Volatile         | Reset IO from RAM                                                                                                            | None                                                  | ACK Packet                                                      |
 | 85      | N/A              | Sample ADC - 10 bit little endian read.                                                                                      | 1 byte per-pin. Pin index.                            | ACK Packet, 2n little endian byte data packet                   |
-| 250     | N/A              | Get UOS Version - Gets the version infomation of the embedded software and device type `[PATCH][MINOR][MAJOR][DEVICE INDEX]` | None                                                  | ACK Packet, 4 byte data packet.                                 |
+| 250     | N/A              | Get UOS Version - Gets the version information of the embedded software and device type `[PATCH][MINOR][MAJOR][DEVICE INDEX]`| None                                                  | ACK Packet, 4 byte data packet.                                 |
+| 251     | N/A              | Get Digital Pin Config - Returns the current, ram, and eeprom settings for the pin `[MODE][LEVEL][MODE][LEVEL][MODE][LEVEL]` | 1 byte per-pin. Pin index.                            | ACK Packet, 6n byte data packet.                                |
+
+## Pin Modes
+
+Pins modes are defined using the following int look-up table when referenced in UOS packets.
+
+### Digital Pins
+
+0. Digital Output
+1. High Impedance Input
+2. 255 Not configured or unknown pin
+
+### Analog Pins
+
+1. DAC Output
+2. ADC Input
+2. 255 Not configured or unknown pin
+
+## EEPROM Usage
+
+Most implementations use onboard EEPROM to store non-volatile information. 
+The system is designed to use less than 4K Bytes.
+
+The following address spaces are used:
+
+* 100-200: Reserved for GPIO non-volatile configuration. 
+  Even indexes show [pin mode](#digital-pins), odd show level. 
+  eg: Pin 13 level is located at address `index = 2 * 13 + 1`.
