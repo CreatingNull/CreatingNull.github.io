@@ -93,4 +93,4 @@ The following address spaces are used:
 
 * 100-200: Reserved for GPIO non-volatile configuration. 
   Even indexes show [pin mode](#digital-pins), odd show level. 
-  eg: Pin 13 level is located at address `index = 2 * 13 + 1`.
+  eg: Pin 13 level is located at address `index = 100 + (2 * 13 + 1)`.
