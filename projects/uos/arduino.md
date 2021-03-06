@@ -6,4 +6,4 @@
 
 Arduino UOS allows dynamic run-time control over Arduino devices.
 
-**[Github Repository](https://github.com/CreatingNull/UART-Arduino-Operating-System)**
+**[Github Repository](https://github.com/CreatingNull/UOS-Arduino)**

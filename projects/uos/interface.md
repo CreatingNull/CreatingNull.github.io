@@ -6,4 +6,4 @@
 
 Python Interface for remote communication and control of a UOS Compliant Microcontroller.
 
-**[Github Repository](https://github.com/CreatingNull/UART-Operating-System-Interface)**
+**[Github Repository](https://github.com/CreatingNull/UOS-Interface)**
