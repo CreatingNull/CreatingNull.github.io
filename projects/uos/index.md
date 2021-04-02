@@ -2,9 +2,9 @@
 
 ---
 
-# UART Operating System
+# ![UOS Logo](../../resources/UOSBlackAndRedSmall.png) UOS Remote Control System
 
-The UART Operating System (UOS) is a project that allows dynamic real-time control over embedded systems operation, using the Null Packet Comms Protocol.
+The UOS remote control system is a project that allows dynamic real-time control over embedded systems operation, using the Null Packet Comms Protocol.
 
 This system aims to provide an all encompassing serial controlled device, which requires little to no further development for new applications. 
 The entire system can be configured in runtime over UART, pins can be mapped levels set ect. 

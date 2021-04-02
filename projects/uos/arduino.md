@@ -2,7 +2,7 @@
 
 ---
 
-# Arduino UOS
+# ![UOS Logo](../../resources/UOSBlackAndRedSmall.png) Arduino UOS
 
 Arduino UOS allows dynamic run-time control over Arduino devices.
 
