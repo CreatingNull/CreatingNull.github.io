@@ -6,7 +6,7 @@ The official documentation for all NullTek projects.
 
 # Projects
 
-## [UART Embedded Operating System (UOS)](projects/uos/index.md)
+## [UOS Embedded Remote Control System](projects/uos/index.md)
 
 _A scheme for providing external control of embedded systems using UART or other interface._
 
@@ -21,5 +21,5 @@ _Low-cost infinitely-cascadable power switch for automation of DC switching with
 
 ## [Null Packet Comm's Protocol (NPC)](protocols/npc/index.md)
 
-_A generic scheme for handling serial communication between subsystems using a packet based approach._
+_A generic scheme for handling serial communication between sub-systems using a packet based approach._
 
