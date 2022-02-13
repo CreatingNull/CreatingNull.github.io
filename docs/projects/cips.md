@@ -1,14 +1,24 @@
-[![NullTek Documentation](../../resources/NullTekDocumentationLogo.png)](https://creatingnull.github.io)
-
+---
+layout: default
+title: Cascadable Power Switches
+nav_order: 3
 ---
 
 # Cascadable Intelligent Power Switches 
 
-![CIPS Header](CIPSHeader.png)
+![CIPS Header](/assets/images/cips/CIPSHeader.png)
 
 CIPS are a low-cost power switch for automating the control of DC power to devices without sacrificing features. 
 The switches are infinitely cascadable and require no software configuration, instead self-addressing by their position in the daisy chain. 
 The switches communicate over a simple half-duplex serial interface, and are able to report back current and voltage measurements.
+
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Hardware 
 

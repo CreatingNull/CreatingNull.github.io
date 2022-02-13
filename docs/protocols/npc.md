@@ -1,8 +1,18 @@
-[![NullTek Documentation](../../resources/NullTekDocumentationLogo.png)](https://creatingnull.github.io)
-
+---
+layout: default
+title: Null Packet Comms
+nav_order: 2
 ---
 
 # Null Packet Comm's Protocol
+
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 I got sick of writing one off unique serial communication protocols during in my honors year in 2015.
 So I laid out a set of guidelines for a generic packet structure that I could use in any project. 

@@ -1,10 +1,26 @@
-[![NullTek Documentation](../../resources/NullTekDocumentationLogo.png)](https://creatingnull.github.io)
+---
+layout: default
+title: UOS
+nav_order: 1
+has_children: true
 
 ---
 
-# ![UOS Logo](../../resources/UOSBlackAndRedSmall.png) UOS Remote Control System
+# UOS Remote Control System
+
+![UOS Logo](/assets/images/uos/UOSBlackAndRedSmall.png) 
 
 The UOS remote control system is a project that allows dynamic real-time control over embedded systems operation, using the Null Packet Comms Protocol.
+
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 This system aims to provide an all encompassing serial controlled device, which requires little to no further development for new applications. 
 The entire system can be configured in runtime over UART, pins can be mapped levels set ect. 
@@ -14,11 +30,11 @@ A command is sent over UART any time you need to set or request some information
 
 ## Device Implementations
 
-* [Arduino (Device 0)](arduino.md) - Running on top of the arduino bootloader, designed for ATMega328, namely the Uno and Nano.
+* [Arduino (Device 0)](arduino) - Running on top of the arduino bootloader, designed for ATMega328, namely the Uno and Nano.
 
 ## Interfaces
 
-* [Official Interface](interface.md) - Python interface for communicating with UOS devices.
+* [Official Interface](interface) - Python interface for communicating with UOS devices.
 
 ## System Architecture
 
