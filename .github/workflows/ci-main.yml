@@ -1,9 +1,9 @@
 on: 
   push:
     branches:
-    - master
+    - main
 
-name: Master branch CI
+name: Main branch CI
 
 jobs:
 
@@ -18,4 +18,4 @@ jobs:
       run: |
         docker run --rm \
         --volume="${{ github.workspace }}:/srv/jekyll" \
-        jekyll/jekyll:pages /bin/bash -c "gem install bundler && chmod -R 777 /srv/jekyll && bundle install && bundle exec jekyll build && bundle exec rake search:init"
+        jekyll/builder:pages /bin/bash -c "gem install bundler && chmod -R 777 /srv/jekyll && bundle install && bundle exec jekyll build && bundle exec rake search:init"
