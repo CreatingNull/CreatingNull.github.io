@@ -31,4 +31,3 @@ _Low-cost infinitely-cascadable power switch for automation of DC switching with
 
 _A generic scheme for handling serial communication between sub-systems using a packet based approach._
 
----
