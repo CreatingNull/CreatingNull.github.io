@@ -4,7 +4,7 @@
 .jekyll-cache
 .sass-cache
 _site
-Gemfile.lock
+_Gemfile.lock
 node_modules
 
 # Ignore pycharm project files.
