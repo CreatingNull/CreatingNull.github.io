@@ -16,16 +16,18 @@ nav_order: 2
 
 I got sick of writing one off unique serial communication protocols during in my honors year in 2015.
 So I laid out a set of guidelines for a generic packet structure that I could use in any project. 
-This allows the communication between devices to be standardised, 
-and to provide more robust error detection than typical UART handlers.
+This allows the communication between devices to be standardised, and to provide more robust error detection than typical UART handlers.
 
 A common, reusable, rigid packet-based system trumps the one-off string parsing UART systems I consistently see being deployed. 
 The NPC protocol is still simple enough that computational overhead is still relatively low for most embedded application.
 
 ## Architecture
 
-The protocol relies on omni-directional binary packets being transmitted over a serial protocol. 
-The packets are addressed, however in most configurations there are only two nodes involved in the communication (a host and a remote).
+The protocol relies on binary packets being transmitted over a serial protocol. 
+The packets are addressed, however in most configurations there are only two nodes involved in the communication (a `primary` and a `remote`) and the addresses characterise instructions.
+
+* `primary` - Is used to refer to the more intelligent system, usually a personal computer of some description.
+* `remote` - Is used to refer to the less intelligent device, usually a microcontroller.
 
 ### Packet Structure
 
@@ -76,6 +78,7 @@ To get the best coverage of errors several steps can be taken. These are all bui
 
 Using the LRC checksum byte provides a method to validate the format and data existing in the packet.
 This is just using ISO 1155 compliant longitudinal redundancy checking.
+LRC8 was chosen instead of a CRC8 due to computation efficiency, it's purpose is provided confidence data is being assembled and disassembled in compliance with the protocol rather than catching byte errors. 
 
 With a zeroed initial LRC byte each byte is added to LRC, masking overflowed bits (this may not be required for 8-bit unsigned numerics on platforms with safe overflow-handling, but it is safer to always mask if you are unsure).
 
@@ -103,6 +106,12 @@ This packet is formatted in accordance with the protocol, however there will jus
 
 ##### NACK/ACK Codes:
 
-0. ACK Acknowledge: Successful response to the packet. 
-1. Packet Receive Error: The device did not receive the packet without errors. 
-2. Process Instruction error: There was a problem while handling the instruction on the device.
+| Payload Value | Code Name              | Description                                                                 |
+|---------------|------------------------|-----------------------------------------------------------------------------|
+| 0             | Acknowledge            | Successful response to the packet.                                          |
+| 1             | Rumtime Fault          | There was an undefined fault during processing the packet.                  |
+| 2             | Start Symbol Fault     | The start symbol was not found in the recieved packet.                      |
+| 3             | Malformed Packet Fault | Packet does not appear to have correct internal formatting, missing data?   |
+| 4             | Checksum Fault         | The computed checksum of the packet doesn't match the sent one.             |
+| 5             | End Symbol Fault       | The end symbol was not found in the recieved packet at the correct location |
+
