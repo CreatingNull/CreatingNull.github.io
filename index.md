@@ -29,6 +29,10 @@ _A scheme for providing external control of embedded systems using UART or other
 
 _Low-cost infinitely-cascadable power switch for automation of DC switching with intelligent feedback._ 
 
+## [ATX PSU Bootstraping Microcontroller](/docs/projects/atx-bootstrap)
+
+_Microchip PIC12F1572 firmware to Provide "Always On" control for an ATX power supply without a motherboard._
+
 # Protocols
 
 ## [Null Packet Comm's Protocol (NPC)](/docs/protocols/npc)
