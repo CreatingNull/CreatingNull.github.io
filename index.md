@@ -39,3 +39,11 @@ _Microchip PIC12F1572 firmware to Provide "Always On" control for an ATX power s
 
 _A generic scheme for handling serial communication between sub-systems using a packet based approach._
 
+# Tools
+
+# [Pre-Commit Tools](/docs/tools)
+
+_Tools for use with the pre-commit framework._
+
+* [Arduino Hooks](/docs/tools/arduino-hooks)
+* [Clipy Hooks](/docs/tools/clipy-hooks)

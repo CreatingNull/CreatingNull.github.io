@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Null Packet Comms
-nav_order: 2
+nav_order: 4
 ---
 
 # Null Packet Comm's Protocol
@@ -114,4 +114,3 @@ This packet is formatted in accordance with the protocol, however there will jus
 | 3             | Malformed Packet Fault | Packet does not appear to have correct internal formatting, missing data?   |
 | 4             | Checksum Fault         | The computed checksum of the packet doesn't match the sent one.             |
 | 5             | End Symbol Fault       | The end symbol was not found in the recieved packet at the correct location |
-
