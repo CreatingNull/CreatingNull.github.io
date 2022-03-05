@@ -41,9 +41,9 @@ _A generic scheme for handling serial communication between sub-systems using a 
 
 # Tools
 
-# [Pre-Commit Tools](/docs/tools)
+# [Pre-Commit Tools](/docs/tools/pre-commit)
 
 _Tools for use with the pre-commit framework._
 
-* [Arduino Hooks](/docs/tools/arduino-hooks)
-* [Clipy Hooks](/docs/tools/clipy-hooks)
+* [Arduino Hooks](/docs/tools/pre-commit/arduino-hooks)
+* [Clipy Hooks](/docs/tools/pre-commit/clipy-hooks)

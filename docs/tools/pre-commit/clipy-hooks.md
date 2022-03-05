@@ -2,7 +2,7 @@
 layout: default
 title: CliPy Hooks
 nav_order: 1
-parent: pre-commit
+parent: Pre-Commit
 ---
 
 # CliPy Hooks

@@ -2,7 +2,7 @@
 layout: default
 title: Arduino Hooks
 nav_order: 1
-parent: pre-commit
+parent: Pre-Commit
 ---
 
 # Arduino pre-commit Hooks

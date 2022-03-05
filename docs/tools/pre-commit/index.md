@@ -1,6 +1,6 @@
 ---
 layout: default
-title: pre-commit
+title: Pre-Commit
 nav_order: 4
 has_children: true
 ---
