@@ -34,13 +34,13 @@ arduino-cli upload --fqbn='arduino:avr:nano' --port='COM3'
 
 ## Supported Hardware
 
-### Raspberry Pi Uno
+### Arduino Uno
 
 Native support via the `arduino:avr` platform core.
 
 * **FQBN**: `arduino:avr:uno`
 
-### Raspberry Pi Nano
+### Arduino Nano
 
 Native support via the `arduino:avr` platform core.
 
