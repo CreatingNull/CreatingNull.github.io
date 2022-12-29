@@ -80,13 +80,16 @@ These volatility levels change how the microcontroller processes instructions an
 
 The following table enumerates currently accepted instructions. 
 
-| Address | Volatility       | Name / Description                                                                                                           | Payload                                               | Response                                                        | 
-| :------ | :--------------: | :--------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------  | :-------------------------------------------------------------- |
-| 64      | Super-Volatile   | Digital IO Control - Over_Rides onboard settings, doesn't update RAM values and can be overwritten.                          | 3 bytes per-pin. Pin index, IO type, level            | ACK (, boolean packet if IO Type = 1)                           |
-| 68      | Volatile         | Reset IO from RAM                                                                                                            | None                                                  | ACK Packet                                                      |
-| 85      | N/A              | Sample ADC - 10 bit little endian read.                                                                                      | 1 byte per-pin. Pin index.                            | ACK Packet, 2n little endian byte data packet                   |
-| 250     | N/A              | Get UOS Version - Gets the version information of the embedded software and device type `[PATCH][MINOR][MAJOR][DEVICE INDEX]`| None                                                  | ACK Packet, 4 byte data packet.                                 |
-| 251     | N/A              | Get Digital Pin Config - Returns the current, ram, and eeprom settings for the pin `[MODE][LEVEL][MODE][LEVEL][MODE][LEVEL]` | 1 byte per-pin. Pin index.                            | ACK Packet, 6n byte data packet.                                |
+| Address |   Volatility   | Name / Description                                                                                                           | Payload                           | Response                                      | 
+|:--------|:--------------:|:-----------------------------------------------------------------------------------------------------------------------------|:----------------------------------|:----------------------------------------------|
+| 60      | Super-Volatile | GPIO Output Set - Over-rides the current setting of a gpio pin, not saved to RAM.                                            | 2 bytes per-pin. Pin index, level | ACK Packet                                    |
+| 61      | Super-Volatile | GPIO Input Read - Reads the current state of a gpio pin, not saved to RAM.                                                   | 2 bytes per-pin. Pin index, level | ACK Packet, 1 byte data packet                |
+| 70      |    Volatile    | Reset IO from RAM - Resets all digital IO from the current RAM state.                                                        | None                              | ACK Packet                                    |
+| 71      |    Volatile    | GPIO Output Set - Sets GPIO output and updates the state to RAM.                                                             | 2 bytes per-pin. Pin index, level | ACK Packet                                    |
+| 72      |    Volatile    | GPIO Input Read - Reads the current state of a gpio pin, saves pin state to RAM.                                             | 2 bytes per-pin. Pin index, level | ACK Packet, 1 bytes data packet               |
+| 85      | Super-Volatile | Sample ADC - 10 bit little endian read.                                                                                      | 1 byte per-pin. Pin index         | ACK Packet, 2n little endian byte data packet |
+| 250     |      N/A       | Get Firmware Version - Gets the version information of the embedded software and device type `[PATCH][MINOR][MAJOR][DEVICE]` | None                              | ACK Packet, 4 byte data packet                |
+| 251     |      N/A       | Get Pin Info - Returns information about pin functionality or states.                                                        | 1 byte per-pin. Pin index         | ACK Packet, 6n byte data packet               |
 
 ## Pin Modes
 
