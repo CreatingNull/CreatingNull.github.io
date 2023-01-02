@@ -46,10 +46,9 @@ At a high level the system is mapped as:
 *   20-29: Reserved for EEPROM operations
 *   30-49: Reserved for RAM operations
 *   50-59: Reserved for future functionality
-*   60-79: Reserved for DIO operations
-*   80-89: Reserved for AIO operations
-*   100-109: Reserved for NPC 1 Wire IO operations
-*   110-249: Reserved for future functionality
+*   60-89: Reserved for DIO operations
+*   90-99: Reserved for AIO operations
+*   100-249: Reserved for future functionality
 *   250-255: High level UOS System Information.
 
 For a rule of thumb you can consider higher numbered operations to be 'higher-level' functionality.
@@ -84,10 +83,10 @@ The following table enumerates currently accepted instructions.
 |:--------|:--------------:|:-----------------------------------------------------------------------------------------------------------------------------|:----------------------------------|:----------------------------------------------|
 | 60      | Super-Volatile | GPIO Output Set - Over-rides the current setting of a gpio pin, not saved to RAM.                                            | 2 bytes per-pin. Pin index, level | ACK Packet                                    |
 | 61      | Super-Volatile | GPIO Input Read - Reads the current state of a gpio pin, not saved to RAM.                                                   | 2 bytes per-pin. Pin index, level | ACK Packet, 1 byte data packet                |
-| 70      |    Volatile    | Reset IO from RAM - Resets all digital IO from the current RAM state.                                                        | None                              | ACK Packet                                    |
-| 71      |    Volatile    | GPIO Output Set - Sets GPIO output and updates the state to RAM.                                                             | 2 bytes per-pin. Pin index, level | ACK Packet                                    |
-| 72      |    Volatile    | GPIO Input Read - Reads the current state of a gpio pin, saves pin state to RAM.                                             | 2 bytes per-pin. Pin index, level | ACK Packet, 1 bytes data packet               |
-| 85      | Super-Volatile | Sample ADC - 10 bit little endian read.                                                                                      | 1 byte per-pin. Pin index         | ACK Packet, 2n little endian byte data packet |
+| 70      |    Volatile    | GPIO Output Set - Sets GPIO output and updates the state to RAM.                                                             | 2 bytes per-pin. Pin index, level | ACK Packet                                    |
+| 71      |    Volatile    | GPIO Input Read - Reads the current state of a gpio pin, saves pin state to RAM.                                             | 2 bytes per-pin. Pin index, level | ACK Packet, 1 bytes data packet               |
+| 79      |    Volatile    | Reset IO from RAM - Resets all digital IO from the current RAM state.                                                        | None                              | ACK Packet                                    |
+| 90      | Super-Volatile | Sample ADC - 10 bit little endian read.                                                                                      | 1 byte per-pin. Pin index         | ACK Packet, 2n little endian byte data packet |
 | 250     |      N/A       | Get Firmware Version - Gets the version information of the embedded software and device type `[PATCH][MINOR][MAJOR][DEVICE]` | None                              | ACK Packet, 4 byte data packet                |
 | 251     |      N/A       | Get Pin Info - Returns information about pin functionality or states.                                                        | 1 byte per-pin. Pin index         | ACK Packet, 6n byte data packet               |
 
